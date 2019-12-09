@@ -1,0 +1,40 @@
+server:
+  servlet:
+    context-path: /annotation
+  port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demoSite1?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  redis:
+    database: 10
+    host: 115.28.138.188
+    port: 6379
+    password: bcsys@useease
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 3
+        max-wait: -1
+        min-idle: 0
+    timeout: 10000
+
+mybatis:
+  type-aliases-package: com.ue.mapper
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.ue.mapper: debug
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

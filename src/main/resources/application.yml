@@ -12,9 +12,9 @@ spring:
     password: root
   redis:
     database: 10
-    host: 115.28.138.188
+    host: xxx
     port: 6379
-    password: bcsys@useease
+    password: xxx
     jedis:
       pool:
         max-active: 100
